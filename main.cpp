@@ -23,7 +23,7 @@ int main( ){
 	shared_ptr<Second> secondApp(new Second);
 	secondApp->main_obj = mainApp;
 
-	ofRunApp(secondWindow, secondApp);
 	ofRunApp(mainWindow, mainApp);
+	ofRunApp(secondWindow, secondApp);
 	ofRunMainLoop();
 }

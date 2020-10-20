@@ -15,9 +15,13 @@ private:
 		WINDOW_W = 640,
 		WINDOW_H = 360,
 	};
-	int id = 0;
+	int id = -1;
 	
 public:
+	Second();
+	~Second();
+	void exit();
+	
 	void setup();
 	void update();
 	void draw();

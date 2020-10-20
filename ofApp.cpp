@@ -7,6 +7,27 @@
 
 /******************************
 ******************************/
+ofApp::ofApp(){
+	printf("ofApp::ctr\n");
+	fflush(stdout);
+}
+
+/******************************
+******************************/
+ofApp::~ofApp(){
+	printf("ofApp::dtr\n");
+	fflush(stdout);
+}
+
+/******************************
+******************************/
+void ofApp::exit(){
+	printf("\nofApp::exit\n");
+	fflush(stdout);
+}
+
+/******************************
+******************************/
 void ofApp::setup(){
 	/********************
 	********************/
@@ -33,10 +54,11 @@ void ofApp::setup(){
 	
 	/********************
 	********************/
-	player.load("mov/KindOfMagic.mp4");
+	player.load("mov/LIVEAID.mp4");
 	player.setLoopState(OF_LOOP_NORMAL);
 	player.setSpeed(1);
-	player.setVolume(1.0);
+	// player.setVolume(1.0);
+	player.setVolume(0.0);
 	player.setPaused(false);
 	player.play();
 	player.setPosition(0); // *.movは、"OF_LOOP_NONE"の時、明示的にsetPosition(0) しないと、戻らないようだ. : seekをplay の後に移動(2020.10.08)
@@ -70,6 +92,11 @@ void ofApp::update(){
 		float radius = Amp * ( sin(2 * 3.14 * now / T) + 1 );
 		ofDrawCircle(fbo[1].getWidth()/2, fbo[1].getHeight()/2, radius);
 	fbo[1].end();
+	
+	/********************
+	********************/
+	printf("main::update : %5.1f\r", ofGetElapsedTimef());
+	fflush(stdout);
 }
 
 /******************************

@@ -48,6 +48,10 @@ public:
 	ofColor col = ofColor(0, 0, 255, 255);
     ofFbo fbo[NUM_FBO];
 	
+	ofApp();
+	~ofApp();
+	void exit();
+	
 	void setup();
 	void update();
 	void draw();

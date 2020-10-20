@@ -7,6 +7,27 @@
 
 /******************************
 ******************************/
+Second::Second(){
+	printf("Second::ctr\n");
+	fflush(stdout);
+}
+
+/******************************
+******************************/
+Second::~Second(){
+	printf("Second::dtr\n");
+	fflush(stdout);
+}
+
+/******************************
+******************************/
+void Second::exit(){
+	printf("\nSecond::exit\n");
+	fflush(stdout);	
+}
+
+/******************************
+******************************/
 void Second::setup(){
 	/********************
 	********************/
@@ -23,7 +44,7 @@ void Second::setup(){
 	// ofEnableBlendMode(OF_BLENDMODE_ADD);
 	// ofEnableSmoothing();
 	
-	ofSetCircleResolution(3);
+	ofSetCircleResolution(6);
 }
 
 /******************************
@@ -38,7 +59,7 @@ void Second::draw(){
 	ofBackground(0);
 	ofSetColor(255);
 	
-	if(id < 2){
+	if( (0 <= id) && (id < 2) ){
 		// main_obj->fbo[id].getTexture().draw(0, 0, ofGetWidth(), ofGetHeight());
 		main_obj->fbo[id].draw(0, 0, ofGetWidth(), ofGetHeight());
 	}else{
